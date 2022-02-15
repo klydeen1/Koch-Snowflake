@@ -121,43 +121,6 @@ struct ContentView: View {
         taskGroup.addTask(priority: .high) {
             await kochFractalLarge.calculateKoch(iterations: totalIterations, piAngleDivisor: kochAngle)
         }
-        
-        /*
-        taskGroup.addTask(priority: .high) {
-            let iterations: Int? = 9
-            let angle: Int? = 4
-                
-            await kochFractalSmall2.calculateKoch(iterations: iterations, piAngleDivisor: angle)
-        }
-                
-        taskGroup.addTask(priority: .high) {
-            let iterations: Int? = 8
-            let angle: Int? = 4
-                    
-            await kochFractalSmall3.calculateKoch(iterations: iterations, piAngleDivisor: angle)
-        }
-                
-        taskGroup.addTask(priority: .high) {
-            let iterations: Int? = 7
-            let angle: Int? = 4
-                      
-            await kochFractalSmall4.calculateKoch(iterations: iterations, piAngleDivisor: angle)
-        }
-                
-        taskGroup.addTask(priority: .high) {
-            let iterations: Int? = 5
-            let angle: Int? = 4
-                    
-            await kochFractalSmall5.calculateKoch(iterations: iterations, piAngleDivisor: angle)
-        }
-
-        taskGroup.addTask(priority: .high) {
-            let iterations: Int? = 1
-            let angle: Int? = 4
-                    
-            await kochFractalSmall.calculateKoch(iterations: iterations, piAngleDivisor: angle)
-        }
-         */
     }
 
         

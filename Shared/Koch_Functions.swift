@@ -82,12 +82,6 @@ func KochFractalCalculator(fractalnum: Int, x: CGFloat, y: CGFloat, size: Double
     // Calculates Side 3
     angleChange = -120.0
     allThePoints += calculateKochSide(&angle, &angleChange, fractalnum, &myX, &myY, size, angleDivisor)
-
-    /*
-    // Calculates Side 4
-    angleChange = -90.0
-    allThePoints += calculateKochSide(&angle, &angleChange, fractalnum, &myX, &myY, size, angleDivisor)
-     */
     
     return(allThePoints)
     
@@ -153,6 +147,8 @@ func KochSide(fractalnum: Int, x: CGFloat, y: CGFloat, angle: CGFloat, size: Dou
         let thetaDeg = theta*180.0/Double.pi
         
         let newSizeOfSide = size/(2.0*(1.0+sin(((theta))/2.0)))
+        
+        myAngle = turn(angle: myAngle, angleChange: 0.0)
         
         currentPoint += KochSide(fractalnum: fractalnum-1, x: myX, y: myY, angle: myAngle, size: newSizeOfSide, divisorForAngle: piDivisorForAngle)
         myX = CGFloat(currentPoint[currentPoint.endIndex-1].xPoint)

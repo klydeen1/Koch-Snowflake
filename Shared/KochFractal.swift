@@ -84,17 +84,10 @@ class KochFractal: NSObject, ObservableObject {
         let center = CGPoint(x: width / 2, y: height / 2)
         
         // Offset from center in y-direction for Koch Fractal
-        let yoffset = size/(2.0*tan(30.0/180.0*Double.pi))
+        let yoffset = size/2.0 * sin(60.0*Double.pi/180.0)
         
-        x = center.x - CGFloat(size/2.0)
-        y = height/2.0 - CGFloat(yoffset)
-        
-        // let yoffset = size/(2.0*(tan(50.0/180.0*Double.pi)))
-        
-        // x = center.x
-        // y = height/2.0 - CGFloat(yoffset)
-        // x = center.x - CGFloat(size/2.0)
-        // y = height/2.0 - CGFloat(yoffset)
+        x = center.x
+        y = center.y - CGFloat(yoffset)
         
         guard iterations >= 0 else { await updateData(pathData: KochPoints)
             return  }
