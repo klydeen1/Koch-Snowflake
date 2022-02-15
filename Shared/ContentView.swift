@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var totalIterationsString = "10"
+    @State var totalIterationsString = "4"
     @State var guess = ""
     // @State private var totalIterations: Int? = 10
     @State private var kochAngle: Int? = 4

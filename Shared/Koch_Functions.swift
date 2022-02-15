@@ -72,7 +72,7 @@ func KochFractalCalculator(fractalnum: Int, x: CGFloat, y: CGFloat, size: Double
     allThePoints.append((xPoint: Double(x), yPoint: Double(y)))
     
     // Calculates Side 1
-    angleChange = 120.0
+    angleChange = 0.0
     allThePoints += calculateKochSide(&angle, &angleChange, fractalnum, &myX, &myY, size, angleDivisor)
                     
     // Calculates Side 2
@@ -146,22 +146,26 @@ func KochSide(fractalnum: Int, x: CGFloat, y: CGFloat, angle: CGFloat, size: Dou
         let theta = Double.pi/Double(piDivisorForAngle)
         let thetaDeg = theta*180.0/Double.pi
         
-        let newSizeOfSide = size/(2.0*(1.0+sin(((theta))/2.0)))
-        
-        myAngle = turn(angle: myAngle, angleChange: 0.0)
+        let newSizeOfSide = size/(2.0*(1.0+sin((theta)/2.0)))
         
         currentPoint += KochSide(fractalnum: fractalnum-1, x: myX, y: myY, angle: myAngle, size: newSizeOfSide, divisorForAngle: piDivisorForAngle)
         myX = CGFloat(currentPoint[currentPoint.endIndex-1].xPoint)
         myY = CGFloat(currentPoint[currentPoint.endIndex-1].yPoint)
         
-        myAngle = turn(angle: myAngle, angleChange: -2.0*thetaDeg)
         
+        myAngle = turn(angle: myAngle, angleChange: thetaDeg)
         currentPoint += KochSide(fractalnum: fractalnum-1, x: myX, y: myY, angle: myAngle, size: newSizeOfSide, divisorForAngle: piDivisorForAngle)
         myX = CGFloat(currentPoint[currentPoint.endIndex-1].xPoint)
         myY = CGFloat(currentPoint[currentPoint.endIndex-1].yPoint)
         
-        myAngle = turn(angle: myAngle, angleChange: -2.0*thetaDeg)
         
+        myAngle = turn(angle: myAngle, angleChange: -2.0*thetaDeg)
+        currentPoint += KochSide(fractalnum: fractalnum-1, x: myX, y: myY, angle: myAngle, size: newSizeOfSide, divisorForAngle: piDivisorForAngle)
+        myX = CGFloat(currentPoint[currentPoint.endIndex-1].xPoint)
+        myY = CGFloat(currentPoint[currentPoint.endIndex-1].yPoint)
+        
+        
+        myAngle = turn(angle: myAngle, angleChange: 1.0*thetaDeg)
         currentPoint += KochSide(fractalnum: fractalnum-1, x: myX, y: myY, angle: myAngle, size: newSizeOfSide, divisorForAngle: piDivisorForAngle)
         myX = CGFloat(currentPoint[currentPoint.endIndex-1].xPoint)
         myY = CGFloat(currentPoint[currentPoint.endIndex-1].yPoint)
