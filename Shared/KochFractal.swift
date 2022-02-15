@@ -84,10 +84,10 @@ class KochFractal: NSObject, ObservableObject {
         let center = CGPoint(x: width / 2, y: height / 2)
         
         // Offset from center in y-direction for Cesaro Fractal
-        let yoffset = size/(2.0*tan(45.0/180.0*Double.pi))
+        let yoffset = size/(2.0*tan(60.0/180.0*Double.pi))
         
         x = center.x - CGFloat(size/2.0)
-        y = height/2.0 - CGFloat(yoffset)
+        y = center.y + CGFloat(yoffset)
         
         guard iterations >= 0 else { await updateData(pathData: KochPoints)
             return  }

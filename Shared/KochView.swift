@@ -15,9 +15,9 @@ struct KochView: View {
     var body: some View {
         //Create the displayed View
         KochFractalShape(KochPoints: kochVertices)
-            .stroke(Color.red, lineWidth: 1)
+            .stroke(Color.white, lineWidth: 1)
             .frame(width: 600, height: 600)
-            .background(Color.white)
+            .background(Color.black)
     }
     
     /// KochFractalShape

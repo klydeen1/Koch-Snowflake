@@ -12,8 +12,8 @@ struct ContentView: View {
     @State var totalIterationsString = "4"
     @State var guess = ""
     // @State private var totalIterations: Int? = 10
-    @State private var kochAngle: Int? = 4
-    @State var editedKochAngle: Int? = 4
+    @State private var kochAngle: Int? = 3
+    @State var editedKochAngle: Int? = 3
     @State var editedTotalIterations: Int? = 10
     @State var viewArray :[AnyView] = []
     
@@ -24,13 +24,6 @@ struct ContentView: View {
     }()
     
     // Setup the GUI to monitor the data from the Koch Fractal Calculator
-    /*
-    @ObservedObject var kochFractalSmall = KochFractal(withData: true)
-    @ObservedObject var kochFractalSmall2 = KochFractal(withData: true)
-    @ObservedObject var kochFractalSmall3 = KochFractal(withData: true)
-    @ObservedObject var kochFractalSmall4 = KochFractal(withData: true)
-    @ObservedObject var kochFractalSmall5 = KochFractal(withData: true)
-     */
     @ObservedObject var kochFractalLarge = KochFractal(withData: true)
     
     //Setup the GUI View

@@ -165,7 +165,7 @@ func KochSide(fractalnum: Int, x: CGFloat, y: CGFloat, angle: CGFloat, size: Dou
         myY = CGFloat(currentPoint[currentPoint.endIndex-1].yPoint)
         
         
-        myAngle = turn(angle: myAngle, angleChange: 1.0*thetaDeg)
+        myAngle = turn(angle: myAngle, angleChange: thetaDeg)
         currentPoint += KochSide(fractalnum: fractalnum-1, x: myX, y: myY, angle: myAngle, size: newSizeOfSide, divisorForAngle: piDivisorForAngle)
         myX = CGFloat(currentPoint[currentPoint.endIndex-1].xPoint)
         myY = CGFloat(currentPoint[currentPoint.endIndex-1].yPoint)
